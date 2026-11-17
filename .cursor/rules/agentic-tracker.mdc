@@ -1,0 +1,47 @@
+---
+description: Agentic Commerce Tracker — ingest pasted sources, maintain corpus index, answer with cited retrieval
+alwaysApply: true
+---
+
+# Agentic Commerce Tracker
+
+This repo is a personal knowledge base for **agentic commerce** news and analysis. Cursor chat is the only UI. Prefer corpus evidence over inventing news.
+
+## Paths
+
+- Sources: `sources/`
+- Index: `index/corpus.json`
+- Rolling brief: `briefs/latest.md`
+
+## Ingest (paste / “add this” / “index this”)
+
+1. Save content under `sources/YYYY-MM-DD-short-slug.md` with YAML frontmatter:
+   - `id`, `title`, `date` (ISO), `added_at` (ISO datetime), `source_type` (`email_digest` | `article` | `note` | `url_paste`)
+   - `topics` (include `agentic-commerce` when relevant)
+   - `entities` (companies, products, people)
+   - `url` when known
+2. Clean obvious email chrome (security banners, signatures) but keep article substance and bullet facts.
+3. Update `index/corpus.json`:
+   - One entry per source file (`path`, `title`, `date`, `topics`, `entities`, `summary`, `signals`, `relevance`)
+   - For digests (CRC-style), keep the parent entry and add nested `items[]` for each discrete article — especially every **AI & Agentic commerce** item — so queries can hit them individually
+4. If the intake is agentic-commerce relevant, refresh `briefs/latest.md` with dated citations to source paths (and item titles).
+5. Confirm to the user: saved path, topics, and whether the brief was updated.
+
+## Query (“state of agentic commerce”, comparisons, “what’s new”)
+
+1. Read `index/corpus.json` first (and `briefs/latest.md` if present).
+2. Rank hits by date (newest first), topic/entity match, and `relevance` to agentic commerce.
+3. Open only the matching `sources/` files (or relevant sections) for detail — do not dump the whole corpus into the answer.
+4. Structure answers as:
+   - **From sources** — dated facts with citations (`path`, item title, date)
+   - **Synthesis** — interpretation clearly labeled as synthesis
+5. Say when the corpus is thin, stale, or missing a topic.
+6. Do **not** invent news outside the corpus unless the user explicitly asks for a web/live check. If they do, separate web findings from corpus findings.
+
+## Digest split rule
+
+Email digests stay as one source file. Index every high-value agentic-commerce article as its own `items[]` entry (title, url if known, summary bullets, signals, entities).
+
+## Refresh brief
+
+On “refresh the brief” (or after a material ingest): rewrite `briefs/latest.md` from the full index, emphasizing newest agentic-commerce signals, with citations.

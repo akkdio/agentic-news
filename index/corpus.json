@@ -1,0 +1,373 @@
+{
+  "updated_at": "2026-11-16T18:41:00-05:00",
+  "entries": [
+    {
+      "id": "openai-wallet-plaid-imprint-2026-11-16",
+      "path": "sources/2026-11-16-openai-wallet-plaid-imprint.md",
+      "title": "Three Fintech News Stories: ChatGPT Wallet, Plaid Agent Detection, Imprint MCP",
+      "date": "2026-11-16",
+      "source_type": "note",
+      "topics": [
+        "agentic-commerce",
+        "payments",
+        "agentic-finance",
+        "issuers",
+        "open-banking",
+        "co-brand"
+      ],
+      "entities": [
+        "OpenAI",
+        "ChatGPT",
+        "JPMorgan Chase",
+        "Visa",
+        "Mastercard",
+        "American Express",
+        "Plaid",
+        "Imprint",
+        "Apple"
+      ],
+      "relevance": {
+        "agentic_commerce": "high",
+        "notes": "Three analysis pieces: network-token agent wallet + Chase bilateral, Plaid agent detection/gatekeeping, Imprint co-brand + MCP as merchant response."
+      },
+      "summary": "Analysis trio on agentic commerce rails and power: OpenAI ChatGPT Wallet ships network-token agent payments with biometric per-purchase approval and a bespoke Chase enrollment path; Plaid launches Agent Detection for banks while positioning as the authorized agent path to bank data (read\u2192write); Imprint raises at ~$1.9B and ships an MCP server so brand co-brand cards/rewards stay visible to shopping agents.",
+      "signals": [
+        "Agent checkout is shifting from single-use virtual cards toward network tokens (ChatGPT Wallet).",
+        "OpenAI is not taking a wallet commission in initial rollout \u2014 courting networks/issuers after Instant Checkout.",
+        "Chase appears in ChatGPT Wallet via bespoke in-app enrollment despite blocking third-party agent spend and resisting Visa Intelligent Commerce.",
+        "Amex ACE / Agent Purchase Protection is the only published authorized-but-wrong agent purchase framework; ChatGPT Wallet is Amex\u2019s first ACE integration.",
+        "Plaid Agent Detection strengthens its moat as authorized bank-data path while selling banks tools to block scrapers.",
+        "Merchants may fight agent disintermediation via co-brand wallets + MCP (Imprint), not mobile apps."
+      ],
+      "items": [
+        {
+          "id": "openai-chatgpt-wallet-chase-2026-11-16",
+          "title": "How Did OpenAI Get Chase On Board? (ChatGPT Wallet)",
+          "date": "2026-11-16",
+          "topics": [
+            "agentic-commerce",
+            "payments",
+            "issuers",
+            "disputes"
+          ],
+          "entities": [
+            "OpenAI",
+            "ChatGPT",
+            "JPMorgan Chase",
+            "Visa",
+            "Mastercard",
+            "American Express",
+            "Apple"
+          ],
+          "relevance": "high",
+          "summary": [
+            "ChatGPT Wallet for U.S. ChatGPT Pro users 18+: agents pay via network tokens; user biometrically approves each purchase; card details not shared with merchant/agent.",
+            "Built with Visa, Mastercard, Amex; Chase has separate primary-cardholder + Chase-app biometric enrollment.",
+            "No OpenAI commission on initial wallet purchases; contrast with Apple Pay ~15 bps and prior Instant Checkout monetization.",
+            "Open questions: proof of consent beyond device biometric, chat context for disputes, authorized-but-wrong purchases; Amex ACE Agent Purchase Protection; possible Chase bilateral for auth data/kill switch/indemnity."
+          ],
+          "signals": [
+            "Network tokens preferred over single-use virtual cards for merchant acceptance.",
+            "Issuer bilateral deals may matter more than network platforms (VIC) for big banks.",
+            "Dispute frameworks for agent purchases remain unresolved at Visa/Mastercard."
+          ]
+        },
+        {
+          "id": "plaid-agent-detection-2026-11-16",
+          "title": "Plaid Wants to Be the Gatekeeper for Agentic Finance",
+          "date": "2026-11-16",
+          "topics": [
+            "agentic-finance",
+            "open-banking",
+            "fraud",
+            "agents"
+          ],
+          "entities": [
+            "Plaid",
+            "OpenAI",
+            "Anthropic",
+            "Perplexity"
+          ],
+          "relevance": "high",
+          "summary": [
+            "Plaid launches Agent Detection: device/behavior/automation/network signals to ID human vs AI agent and which AI provider.",
+            "Trained across hundreds of institutions; complements Plaid\u2019s history with scraping and AI agent bank connectivity (Claude, ChatGPT, Muse, Perplexity).",
+            "Vision: consumer-permissioned approve-specific-actions path for agent write access; sell banks detection + outsourced governed agent access."
+          ],
+          "signals": [
+            "Plaid playing both sides: enable authorized AI access and block unauthorized agent scraping.",
+            "Next battleground is governed write-access for agents, not only read APIs."
+          ]
+        },
+        {
+          "id": "imprint-cobrand-mcp-agentic-2026-11-16",
+          "title": "Are Co-Brand Cards a Solution to Merchants\u2019 Agentic Commerce Anxieties?",
+          "date": "2026-11-16",
+          "topics": [
+            "agentic-commerce",
+            "co-brand",
+            "loyalty",
+            "mcp"
+          ],
+          "entities": [
+            "Imprint",
+            "Fanatics",
+            "Albertsons",
+            "Kroger",
+            "Shell",
+            "OpenAI"
+          ],
+          "relevance": "high",
+          "summary": [
+            "Imprint raises $130M at ~$1.9B valuation; 2M+ members; brand partners representing $500B+ U.S. consumer spend; new programs with Albertsons, Fanatics, Kroger, Shell.",
+            "Released MCP server for AI agents: rewards, virtual cards, transaction history, member review/authorize of agent-initiated purchases.",
+            "Thesis: agents route around apps/websites but not the payment credential \u2014 co-brand + rewards + MCP keep brands in the agent transaction."
+          ],
+          "signals": [
+            "Co-brand / loyalty credentials are a merchant hedge against agent disintermediation.",
+            "MCP is becoming the agent-facing equivalent of the brand mobile app.",
+            "Deposit-secured Imprint Access widens co-brand funnel beyond traditional credit approval."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "crc-fintech-weekend-reads-2026-11-14",
+      "path": "sources/2026-11-14-crc-fintech-weekend-reads.md",
+      "title": "CRC Fintech and Banking Weekend Reads \u2013 November 14, 2026",
+      "date": "2026-11-14",
+      "source_type": "email_digest",
+      "topics": [
+        "agentic-commerce",
+        "payments",
+        "fintech",
+        "ai-shopping",
+        "banking"
+      ],
+      "entities": [
+        "Visa",
+        "Mastercard",
+        "Affirm",
+        "OpenAI",
+        "Anthropic",
+        "Block",
+        "Square",
+        "Shopify",
+        "Tencent",
+        "Goldman Sachs",
+        "BILL"
+      ],
+      "relevance": {
+        "agentic_commerce": "high",
+        "notes": "Lead section is AI & Agentic commerce; remaining sections are broader fintech/banking."
+      },
+      "summary": "Cleveland Research weekend digest (Nov 14, 2026) covering payments/fintech. Highest-signal section for this tracker is AI & Agentic commerce: Visa shopping-agent benchmarks, Mastercard Agent Pay partnerships, Affirm\u2019s view on AI-driven BNPL mix, Square/Block agentic seller tools, plus adjacent AI finance launches.",
+      "signals": [
+        "Networks are productizing agent checkout (Mastercard Agent Pay; Visa Agentic Commerce Benchmark).",
+        "Model reliability for shopping agents is still weak on average (~43% fail Visa tests).",
+        "BNPL and merchant platforms expect agents to reshape purchase/financing flows (Affirm, Square).",
+        "Banks remain cautious on broad employee AI tool access (Goldman restriction)."
+      ],
+      "items": [
+        {
+          "id": "visa-agentic-commerce-benchmark-2026-11",
+          "title": "Visa Finds AI Models Fail 43% of Shopping Test Runs",
+          "date": "2026-11-06",
+          "url": "https://www.pymnts.com/news/artificial-intelligence/2026/visa-finds-ai-models-fail-43percent-shopping-test-runs/",
+          "topics": [
+            "agentic-commerce",
+            "ai-shopping",
+            "benchmarks"
+          ],
+          "entities": [
+            "Visa"
+          ],
+          "relevance": "high",
+          "summary": [
+            "Visa tested 22 AI models from 12 labs; 57.2% of runs passed, 42.8% failed.",
+            "Best models passed 82.2% of tests vs 28.9% for worst; 54% of failed runs still purchased the wrong product.",
+            "Visa launched Agentic Commerce Benchmark for need identification, purchase quality, and avoiding bad buys."
+          ],
+          "signals": [
+            "Agent shopping quality varies widely by model.",
+            "Failed agent runs often still complete purchases \u2014 a merchant/risk concern."
+          ]
+        },
+        {
+          "id": "anthropic-claude-personal-finance-2026-11",
+          "title": "Anthropic Launches Claude Personal Finance",
+          "date": "2026-11-09",
+          "url": "https://www.pymnts.com/news/artificial-intelligence/2026/anthropic-launches-claude-personal-finance-ahead-of-nasdaq-listing/",
+          "topics": [
+            "ai-finance",
+            "open-banking"
+          ],
+          "entities": [
+            "Anthropic",
+            "Plaid",
+            "OpenAI"
+          ],
+          "relevance": "medium",
+          "summary": [
+            "Claude Personal Finance connects up to 16 U.S. bank accounts via Plaid; balances, credit limits, 24 months of history.",
+            "Paid subscribers only; cannot move or invest money.",
+            "Follows OpenAI ChatGPT Finances (~6 months earlier) with broader money features."
+          ],
+          "signals": [
+            "LLM platforms are embedding personal finance read-only account context.",
+            "Competitive pressure between Anthropic and OpenAI in consumer finance assistants."
+          ]
+        },
+        {
+          "id": "affirm-ai-shopping-agents-bnpl-2026-11",
+          "title": "Affirm Expects AI Shopping Agents to Favor Interest-Free Installments",
+          "date": "2026-11-06",
+          "url": "https://www.pymnts.com/earnings/2026/affirm-ceo-expects-ai-shopping-agents-to-favor-interest-free-installments/",
+          "topics": [
+            "agentic-commerce",
+            "bnpl",
+            "ai-shopping"
+          ],
+          "entities": [
+            "Affirm"
+          ],
+          "relevance": "high",
+          "summary": [
+            "Affirm expects AI shopping agents to favor 0% installment loans as consumers delegate purchases.",
+            "Interest-free was 28% of GMV vs 72% interest-bearing; GMV +34% YoY to $14.4B.",
+            "U.S. 30+ DPD rose to 2.9%; partly seasonal plus an approval test."
+          ],
+          "signals": [
+            "Agent-mediated checkout may skew BNPL mix toward 0% offers.",
+            "Affirm positioning agents as a distribution channel for installments."
+          ]
+        },
+        {
+          "id": "mastercard-openai-tencent-agentic-2026-11",
+          "title": "Mastercard Forms OpenAI and Tencent Partnerships to Drive Agentic Commerce",
+          "date": "2026-11-03",
+          "url": "https://www.pymnts.com/partnerships/2026/mastercard-forms-openai-and-tencent-partnerships-to-drive-agentic-commerce/",
+          "topics": [
+            "agentic-commerce",
+            "payments",
+            "partnerships"
+          ],
+          "entities": [
+            "Mastercard",
+            "OpenAI",
+            "Tencent",
+            "Shopify",
+            "TenPay"
+          ],
+          "relevance": "high",
+          "summary": [
+            "Mastercard partnering with OpenAI to expand agentic commerce via Agent Pay in AI shopping.",
+            "Agent Pay uses tokenized credentials; also integrating into Shopify Shop Pay for AI-initiated transactions.",
+            "Expanding TenPay Global work: agentic payments, China QR, WeChat remittances via Agent Pay / Agent Connect."
+          ],
+          "signals": [
+            "Card networks racing to be the rails for agent-initiated payments.",
+            "Tokenization + Shop Pay suggests merchant-path readiness, not just demos."
+          ]
+        },
+        {
+          "id": "goldman-claude-code-github-restrictions-2026-11",
+          "title": "Goldman Sachs Bars Bankers From Using Claude Code and GitHub",
+          "date": "2026-11-03",
+          "url": "https://www.pymnts.com/news/artificial-intelligence/2026/goldman-sachs-bars-bankers-from-employing-some-ai-tools/",
+          "topics": [
+            "enterprise-ai",
+            "banking"
+          ],
+          "entities": [
+            "Goldman Sachs",
+            "Anthropic",
+            "Microsoft"
+          ],
+          "relevance": "low",
+          "summary": [
+            "Goldman restricts Claude Code and GitHub to engineers only; bankers/traders lose prior access.",
+            "Shift from broad experimentation toward controlled deployment (~12,000 engineers)."
+          ],
+          "signals": [
+            "Large banks tightening AI tool governance after open experimentation."
+          ]
+        },
+        {
+          "id": "block-square-ai-orders-2026-11",
+          "title": "Block Puts AI to Work Taking Orders and Preparing Purchases",
+          "date": "2026-11-04",
+          "url": "http://pymnts.com/earnings/2026/block-puts-ai-to-work-taking-orders-and-preparing-purchases/",
+          "topics": [
+            "agentic-commerce",
+            "smb",
+            "pos"
+          ],
+          "entities": [
+            "Block",
+            "Square",
+            "Cash App"
+          ],
+          "relevance": "high",
+          "summary": [
+            "Square expanding AI: voice ordering via Square Kiosk; Squaremates auto-prepare purchase orders.",
+            "Plans AI agents for inventory management and supplier ordering.",
+            "Square payment volume +14% YoY to $76.4B in 3Q26."
+          ],
+          "signals": [
+            "Agentic commerce on the seller side: ordering, inventory, and kiosk voice agents."
+          ]
+        },
+        {
+          "id": "square-squaremates-agentic-platform-2026-11",
+          "title": "Square Expands its Agentic Platform with Squaremates and Powerful New AI Tools",
+          "date": "2026-11-04",
+          "url": "https://investors.block.xyz/investor-news/news-details/2026/Square-Expands-its-Agentic-Platform-with-Squaremates-and-Powerful-New-AI-Tools/default.aspx",
+          "topics": [
+            "agentic-commerce",
+            "smb",
+            "mcp",
+            "pos"
+          ],
+          "entities": [
+            "Square",
+            "Block"
+          ],
+          "relevance": "high",
+          "summary": [
+            "Squaremates GA for U.S. sellers: multi-step automation in Dashboard (sales analysis, marketing, schedules, catalogs).",
+            "Beta auto-prepares inventory orders on supplier sites; Square CLI + expanded Square MCP for third-party AI agents.",
+            "Tools free for U.S. sellers; replaces Managerbot."
+          ],
+          "signals": [
+            "Merchant platforms shipping agent runtimes and MCP hooks for third-party agents.",
+            "Agentic SMB ops (not only consumer shopping agents) are a live product category."
+          ]
+        },
+        {
+          "id": "bill-robin-ai-underwriting-2026-11",
+          "title": "BILL Slashes Underwriting Times From 3 Hours to 12 Minutes With AI",
+          "date": "2026-11-09",
+          "url": "https://www.pymnts.com/earnings/2026/bill-slashes-underwriting-times-from-3-hours-to-12-minutes-with-ai/",
+          "topics": [
+            "ai-agents",
+            "b2b",
+            "underwriting"
+          ],
+          "entities": [
+            "BILL",
+            "Visa"
+          ],
+          "relevance": "medium",
+          "summary": [
+            "Robin suite of three AI agents cut underwriting case time from 3 hours to 12 minutes.",
+            "100+ AI agents built in a year; ~1,400 hours/month saved; Chat with BILL handles 45% of support."
+          ],
+          "signals": [
+            "Multi-agent workflows moving from demos to measurable ops savings in B2B fintech."
+          ]
+        }
+      ]
+    }
+  ]
+}
