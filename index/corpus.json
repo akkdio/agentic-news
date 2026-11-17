@@ -1,6 +1,87 @@
 {
-  "updated_at": "2026-11-16T18:41:00-05:00",
+  "updated_at": "2026-11-16T20:40:00-05:00",
   "entries": [
+    {
+      "id": "stripe-vs-shopify-agentic-tools",
+      "path": "sources/stripe vs shopify agentic.md",
+      "title": "Stripe vs Shopify Agentic Commerce Tools",
+      "date": "2026-11-16",
+      "source_type": "note",
+      "topics": [
+        "agentic-commerce",
+        "payments",
+        "protocols",
+        "platforms"
+      ],
+      "entities": [
+        "Stripe",
+        "Shopify",
+        "OpenAI",
+        "ChatGPT",
+        "Perplexity"
+      ],
+      "relevance": {
+        "agentic_commerce": "high",
+        "notes": "Comparative stack note: Stripe ACP/SPT/suite vs Shopify Agentic Storefronts/Catalog/Universal Cart/Checkout Kit/Sidekick."
+      },
+      "summary": "Stripe builds the open payments/protocol rail (ACP with OpenAI, Shared Payment Tokens, Agentic Commerce Suite, Agent Toolkit, Link for agents). Shopify builds platform-native agent commerce (Agentic Storefronts, Catalog, Universal Cart, Checkout Kit) plus merchant ops AI (Magic/Sidekick). Stripe = rail for any stack; Shopify = AI-native merchant platform.",
+      "signals": [
+        "ACP + Shared Payment Tokens are Stripe\u2019s core agent payment primitives (often with Instant Checkout in ChatGPT).",
+        "Shopify syndicates catalogs to ChatGPT/Perplexity while keeping branded checkout and attribution.",
+        "Universal Cart enables multi-store agent carts on Shopify.",
+        "Conceptual split: Stripe owns protocol/payments; Shopify owns merchant discoverability and checkout control."
+      ],
+      "items": [
+        {
+          "id": "stripe-acp-suite",
+          "title": "Stripe Agentic Commerce stack (ACP, SPTs, Suite, Toolkit, Link)",
+          "date": "2026-11-16",
+          "topics": [
+            "agentic-commerce",
+            "payments",
+            "protocols"
+          ],
+          "entities": [
+            "Stripe",
+            "OpenAI"
+          ],
+          "relevance": "high",
+          "summary": [
+            "ACP: open standard with OpenAI for product/cart/purchase including ChatGPT Instant Checkout.",
+            "SPTs: scoped payment credentials without exposing full card/wallet details.",
+            "Suite: hosted ACP endpoint + catalog syndication to AI agents; Radar + webhooks; keep OMS/fulfillment.",
+            "Agent Toolkit for LangChain/OpenAI/Vercel; Link extended for agentic identity and spending controls."
+          ],
+          "signals": [
+            "Stripe is the cross-stack agent payments + protocol layer."
+          ]
+        },
+        {
+          "id": "shopify-agentic-storefronts",
+          "title": "Shopify Agentic Storefronts, Catalog, Universal Cart, Checkout Kit",
+          "date": "2026-11-16",
+          "topics": [
+            "agentic-commerce",
+            "platforms",
+            "discovery"
+          ],
+          "entities": [
+            "Shopify",
+            "ChatGPT",
+            "Perplexity"
+          ],
+          "relevance": "high",
+          "summary": [
+            "Agentic Storefronts syndicate catalogs to agents with merchant-branded checkout and channel toggles.",
+            "Catalog is structured multi-merchant index for agent discovery; Universal Cart composes multi-store carts.",
+            "Checkout Kit hands off to merchant-controlled Shopify checkout; Sidekick/Magic for merchant ops AI."
+          ],
+          "signals": [
+            "Shopify prioritizes merchant relationship + discoverability over owning the payment protocol."
+          ]
+        }
+      ]
+    },
     {
       "id": "openai-wallet-plaid-imprint-2026-11-16",
       "path": "sources/2026-11-16-openai-wallet-plaid-imprint.md",
@@ -133,7 +214,7 @@
     },
     {
       "id": "crc-fintech-weekend-reads-2026-11-14",
-      "path": "sources/2026-11-14-crc-fintech-weekend-reads.md",
+      "path": "sources/11.14.26.md",
       "title": "CRC Fintech and Banking Weekend Reads \u2013 November 14, 2026",
       "date": "2026-11-14",
       "source_type": "email_digest",
@@ -365,6 +446,164 @@
           ],
           "signals": [
             "Multi-agent workflows moving from demos to measurable ops savings in B2B fintech."
+          ]
+        }
+      ],
+      "added_at": "2026-11-16T20:38:00-05:00"
+    },
+    {
+      "id": "exec-summary-agentic-commerce-2026-11-10",
+      "path": "sources/11.10.26 udpate - Executive Summary.md",
+      "title": "Agentic Commerce Executive Summary \u2013 November 10, 2026 Update",
+      "date": "2026-11-10",
+      "source_type": "note",
+      "topics": [
+        "agentic-commerce",
+        "fraud",
+        "payments",
+        "trust",
+        "standards",
+        "virtual-cards",
+        "network-tokens"
+      ],
+      "entities": [
+        "Meta",
+        "Muse",
+        "Visa",
+        "Mastercard",
+        "American Express",
+        "Stripe",
+        "Shopify",
+        "PayPal",
+        "Affirm",
+        "Adyen",
+        "Amazon",
+        "Bank of America",
+        "OpenAI",
+        "Walmart",
+        "Synchrony",
+        "Plaid"
+      ],
+      "relevance": {
+        "agentic_commerce": "high",
+        "notes": "Industry update: early volumes, Muse breakout, trust/intent layers, network vs Stripe VCN debate, strategic contradictions."
+      },
+      "summary": "Ecosystem executive summary: agentic commerce is real but tiny GMV; Meta Muse is the early consumer proof point; trust/identity/intent/liability are the gating factors; networks want to be the trust layer; PAP/UCP standards forming; biggest technical fight is network tokens vs Stripe-like one-time virtual cards (VCN bootstrap now, tokens for scale/risk later).",
+      "signals": [
+        "Volumes still tiny (e.g. Uber ~500 AI Uber Eats orders / 4 rides in a major week) despite heavy investment.",
+        "Meta Muse: 10M users US/CA, #1 App Store, ~25% DAU, shopping dominant, avg basket >$200.",
+        "Industry converging on trusted permissioned agents with networks/wallets/PSPs as trust layer.",
+        "Intent verification is becoming the new authentication (Visa/Mastercard/Amex/PayPal).",
+        "Mastercard opposes long-term intermediary VCNs; Stripe-like VCN model wins short-term deployability.",
+        "Prediction: VCN-style approaches 2026\u20132028; network tokenization dominates ~2028\u20132032 as fraud/liability force standards.",
+        "Merchant discoverability may matter more than checkout; Shopify AI-referred conversion +64%."
+      ],
+      "items": [
+        {
+          "id": "muse-breakout-2026-11-10",
+          "title": "Meta/Muse as early breakout agentic shopping player",
+          "date": "2026-11-10",
+          "topics": [
+            "agentic-commerce",
+            "consumer-agents"
+          ],
+          "entities": [
+            "Meta",
+            "Muse",
+            "Plaid",
+            "Stripe"
+          ],
+          "relevance": "high",
+          "summary": [
+            "10M users US/Canada; #1 App Store since launch; ~25% DAU; shopping most common; >25% shop via Muse; avg basket >$200.",
+            "Plaid seeing unprecedented connector activity; Stripe raised transaction limits on volume."
+          ],
+          "signals": [
+            "Muse is the primary consumer proof point that people will let AI agents shop."
+          ]
+        },
+        {
+          "id": "networks-trust-layer-2026-11-10",
+          "title": "Networks positioning as trust layer (Visa VIC, Mastercard Agent Pay)",
+          "date": "2026-11-10",
+          "topics": [
+            "agentic-commerce",
+            "trust",
+            "payments"
+          ],
+          "entities": [
+            "Visa",
+            "Mastercard",
+            "American Express",
+            "Ramp",
+            "BILL",
+            "Airwallex",
+            "Billtrust"
+          ],
+          "relevance": "high",
+          "summary": [
+            "Visa: ~50 AI partners in production; Intelligent Commerce; Trusted Agent Protocol; Agent Directory; agent tokens; B2B pilots.",
+            "Mastercard: Agent Pay, Agent Connect, Verifiable Intent, Agentic Trust Intelligence; opposes intermediary virtual cards long-term.",
+            "Amex: ACE, Agent Purchase Protection, Intent Intelligence; OpenAI partnership expansion."
+          ],
+          "signals": [
+            "Networks want agent identity + intent metadata on the token, not opaque VCNs."
+          ]
+        },
+        {
+          "id": "stripe-vcn-vs-network-tokens-2026-11-10",
+          "title": "Network tokens vs Stripe virtual-card bootstrap model",
+          "date": "2026-11-10",
+          "topics": [
+            "virtual-cards",
+            "network-tokens",
+            "payments",
+            "fraud"
+          ],
+          "entities": [
+            "Stripe",
+            "Mastercard",
+            "Visa",
+            "PayPal",
+            "Adyen"
+          ],
+          "relevance": "high",
+          "summary": [
+            "Stripe-like model: customer card \u2192 Stripe one-time VCN \u2192 merchant; fast merchant coverage, weak agent metadata.",
+            "Network model: card \u2192 network token + agent/intent metadata \u2192 merchant; better fraud/disputes, needs ecosystem upgrades.",
+            "Forecast: VCN dominates near term; network tokens win for scale/risk later."
+          ],
+          "signals": [
+            "Direct answer to 'who uses virtual cards': Stripe-style agent checkout uses one-time VCNs as the bootstrap.",
+            "Mastercard framing of VCNs as temporary bridge targets intermediary models like Stripe's."
+          ]
+        },
+        {
+          "id": "strategic-contradictions-2026-11-10",
+          "title": "Strategic contradictions: trust ownership, merchant vs agent, HITL vs autonomous, open vs closed",
+          "date": "2026-11-10",
+          "topics": [
+            "agentic-commerce",
+            "strategy"
+          ],
+          "entities": [
+            "Meta",
+            "Visa",
+            "Shopify",
+            "Amazon",
+            "Bank of America",
+            "Stripe",
+            "Amex"
+          ],
+          "relevance": "high",
+          "summary": [
+            "Who owns trust: networks (agent as network participant) vs Meta (Muse as interface monetizing merchants).",
+            "Merchant-controlled checkout (Shopify) vs agent/Amazon aggregation; Crocs Rivet as merchant pushback.",
+            "Banks want human approval; Meta/Visa push toward autonomous/M2M.",
+            "Open standards (PAP/UCP: Meta, Shopify, Stripe, Walmart, Synchrony) vs curated agent allowlists (Amex, BofA, Amazon)."
+          ],
+          "signals": [
+            "Likely end-state: open discovery + closed payment authorization."
           ]
         }
       ]

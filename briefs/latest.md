@@ -2,43 +2,52 @@
 
 **Brief updated:** 2026-11-16  
 **Corpus coverage through:** 2026-11-16  
-**Sources:** [`sources/2026-11-16-openai-wallet-plaid-imprint.md`](../sources/2026-11-16-openai-wallet-plaid-imprint.md), [`sources/2026-11-14-crc-fintech-weekend-reads.md`](../sources/2026-11-14-crc-fintech-weekend-reads.md)
+**Sources:**  
+- [`sources/stripe vs shopify agentic.md`](../sources/stripe%20vs%20shopify%20agentic.md)  
+- [`sources/2026-11-16-openai-wallet-plaid-imprint.md`](../sources/2026-11-16-openai-wallet-plaid-imprint.md)  
+- [`sources/11.14.26.md`](../sources/11.14.26.md)  
+- [`sources/11.10.26 udpate - Executive Summary.md`](../sources/11.10.26%20udpate%20-%20Executive%20Summary.md)
 
 ## Snapshot
 
-Agentic commerce is crossing from demos into **issuer-grade payment rails**, **bank-data gatekeeping**, and **merchant counter-moves via co-brand + MCP** — while **dispute / “wrong purchase” rules** and **model shopping quality** remain open risks.
+Agentic commerce is **real but tiny in GMV**. The fight is over **trust / intent / liability**, **who owns the consumer interface vs the payment rail**, and whether checkout bootstraps on **virtual cards (Stripe-like)** or **network tokens (Visa/Mastercard / ChatGPT Wallet)**. Platforms (Shopify) and brand wallets (Imprint) are racing on **merchant discoverability and relationship control**.
 
 ## From sources
 
-### Agent checkout rails (newest)
+### Early proof points & volume
 
-- **OpenAI ChatGPT Wallet** (U.S. Pro, 18+): agents pay with **network tokens**; user reviews cart/total/card and **biometrically approves each purchase**; PAN not shared with merchant/agent; no OpenAI commission at launch. *(2026-11-16 note)*
-- Built with **Visa, Mastercard, Amex**; **Chase** appears via a **bespoke Chase-app enrollment** (primary cardholder + biometrics) despite historically blocking third-party agent spend and resisting **Visa Intelligent Commerce**. Analysis reads this as a likely **bilateral**, not VIC. *(same)*
-- **Amex ACE** + **Agent Purchase Protection** (authorized-but-wrong for registered agents) named ChatGPT Wallet as first ACE integration; Visa/Mastercard still lack a published agent-dispute framework. *(same)*
-- Earlier: **Mastercard Agent Pay** + OpenAI/Shopify/Tencent; **Visa Agentic Commerce Benchmark** (~43% fail; many failed runs still purchase). *(CRC 2026-11-14)*
+- Industry consensus (Nov 10 update): heavy investment, **negligible volume** today (e.g. Uber ~500 AI Uber Eats / 4 ride txs in a major week). *(exec summary 2026-11-10)*
+- **Meta Muse** is the breakout consumer signal: 10M US/CA users, #1 App Store, ~25% DAU, shopping-led, avg basket >$200; Plaid/Stripe seeing elevated connector/txn activity. *(same)*
 
-### Who controls bank / agent access
+### Rails & credentials
 
-- **Plaid Agent Detection**: ID human vs AI agent (and which provider) for financial logins; strengthens Plaid as the **authorized** path while blocking scrapers; roadmap toward **consumer-approved agent write actions**. *(2026-11-16 note)*
-- Adjacent: Claude/ChatGPT personal finance via Plaid-style account linking (read-only). *(CRC)*
+- **ChatGPT Wallet**: network tokens end-to-end, biometric per-purchase approval, Chase bespoke enrollment; no OpenAI commission at launch; Amex ACE first integration. *(2026-11-16 note)*
+- **Stripe**: ACP (+ OpenAI), **Shared Payment Tokens**, Agentic Commerce Suite, Agent Toolkit, Link for agents — payments/protocol rail across stacks. *(Stripe vs Shopify)*
+- **Virtual cards:** Stripe-like one-time VCNs are the **near-term bootstrap** (works on existing merchant acceptance); Mastercard frames VCNs as a temporary bridge and prefers fully tokenized network-native flows. Forecast in exec summary: VCN ~2026–2028, network tokens for scale/risk ~2028–2032. *(exec summary)*
+- **Visa / Mastercard**: VIC / Agent Pay + agent directories, verifiable intent, agent tokens; Visa ~50 AI partners in production. *(exec summary + CRC 11.14)*
 
-### Merchant response to disintermediation
+### Platforms & merchants
 
-- **Imprint** (~$1.9B after $130M raise) ships an **MCP server** so agents can use member rewards, virtual cards, history, and purchase authorization — thesis: agents skip apps but **can’t skip the payment credential**; co-brand keeps the brand in-wallet. *(2026-11-16 note)*
-- **Square/Block Squaremates** + MCP/CLI: seller-side agent runtime. *(CRC)*
-- **Affirm**: agents may skew toward **0% installments**. *(CRC)*
+- **Shopify**: Agentic Storefronts, Catalog, Universal Cart, Checkout Kit — keep branded checkout/attribution; Magics/Sidekick for merchant ops; AI-referred conversion reportedly +64%. *(Stripe vs Shopify + exec summary)*
+- **Imprint**: co-brand + MCP so brand credentials stay in the agent wallet. *(2026-11-16 note)*
+- **Squaremates / Affirm**: seller agents + agents picking 0% BNPL. *(CRC 11.14)*
+
+### Trust, banks, data
+
+- Intent verification rising as the new auth question (“did the agent buy what was authorized?”). *(exec summary)*
+- **Plaid Agent Detection** + path to governed agent write access. *(2026-11-16 note)*
+- Banks (e.g. BofA) still push human-in-the-loop; big-tech agents push autonomy. *(exec summary)*
 
 ## Synthesis
 
-1. **Tokens over virtual cards:** ChatGPT Wallet marks a shift toward network-token agent pay that merchants prefer — aligning with Mastercard’s “bridge” framing of virtual cards.
-2. **Issuers are the bottleneck:** Networks can announce platforms; big banks (Chase) still want bilateral control, auth evidence, and dispute economics. Amex’s dual role lets it ship ACE protection first.
-3. **Plaid is building the gate:** Detect agents for banks + own the permissioned AI pipe (read now, write next) is a classic moat play for agentic finance.
-4. **Merchants fight for the bottom of the stack:** If discovery/checkout UX is agent-routed, co-brand + rewards + MCP (Imprint) is a more durable hedge than polishing mobile apps.
-5. **Quality + disputes still lag product:** Visa’s failure rates and “authorized but wrong” gaps mean trust infrastructure is behind wallet UX.
+1. **Interface vs rail:** Muse/ChatGPT win attention first; networks/PSPs fight to own trust metadata on the payment.
+2. **VCN now, tokens later:** Named virtual-card path is the **Stripe-style intermediary VCN**; ChatGPT Wallet / network Agent Pay are the token alternative merchants and networks prefer long-term.
+3. **Shopify vs Stripe:** complementary more than identical — Stripe = open protocol + pay; Shopify = merchant discovery + controlled checkout.
+4. **Trust stack is the product:** identity, delegated authority, intent, liability — ahead of GMV.
 
 ## Gaps / freshness
 
-- Chase–OpenAI deal terms, Amex ACE coverage details, and whether ChatGPT “dots” are registered ACE agents remain **analysis/inference**, not primary docs in-corpus.
-- Still thin on regulation, retailer-native agent programs beyond Imprint/Square, and post-benchmark model-vendor responses.
+- Primary filings / exact product docs for ACP, VIC, Muse metrics not in-corpus beyond these notes.
+- Chase–OpenAI bilateral terms and Amex ACE coverage details still inferred.
 
 *Ask in chat to add sources or say “refresh the brief” after new intakes.*

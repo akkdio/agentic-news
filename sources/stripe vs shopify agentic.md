@@ -1,3 +1,22 @@
+---
+id: stripe-vs-shopify-agentic-tools
+title: "Stripe vs Shopify Agentic Commerce Tools"
+date: 2026-11-16
+added_at: 2026-11-16T20:40:00-05:00
+source_type: note
+topics:
+  - agentic-commerce
+  - payments
+  - protocols
+  - platforms
+entities:
+  - Stripe
+  - Shopify
+  - OpenAI
+  - ChatGPT
+  - Perplexity
+---
+
 # Stripe vs Shopify Agentic Commerce Tools
 
 Stripe and Shopify are both building full-stack agentic commerce layers: Stripe around ACP, Shared Payment Tokens, and an Agentic Commerce Suite; Shopify around Agentic Storefronts plus Catalog, Universal Cart, Checkout Kit, and on-platform AI like Sidekick.[web:15][web:16][web:17][web:20][web:26][web:27][web:28][web:32]
