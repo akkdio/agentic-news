@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-16T20:40:00-05:00",
+  "updated_at": "2026-11-18T09:15:00-05:00",
   "entries": [
     {
       "id": "stripe-vs-shopify-agentic-tools",
@@ -450,6 +450,144 @@
         }
       ],
       "added_at": "2026-11-16T20:38:00-05:00"
+    },
+    {
+      "id": "chatgpt-wallet-merchant-checkout-2026-11-18",
+      "path": "sources/2026-11-18-chatgpt-wallet-merchant-checkout.md",
+      "title": "ChatGPT Wallet: Limited Rollout With Amex, Chase, Mastercard, Visa via Merchant Checkout",
+      "date": "2026-11-13",
+      "source_type": "article",
+      "topics": [
+        "agentic-commerce",
+        "payments",
+        "network-tokens",
+        "merchants",
+        "fraud"
+      ],
+      "entities": [
+        "OpenAI",
+        "ChatGPT",
+        "American Express",
+        "Chase",
+        "Mastercard",
+        "Visa",
+        "Amazon",
+        "Meta",
+        "Muse",
+        "Adyen",
+        "Checkout.com",
+        "Stripe",
+        "Forter",
+        "Riskified",
+        "Sardine",
+        "Signifyd",
+        "BILL",
+        "Billtrust"
+      ],
+      "relevance": {
+        "agentic_commerce": "high",
+        "notes": "Primary product launch coverage for ChatGPT Wallet; complements prior analysis note with merchant-checkout strategy, playbook, bot auth, PSP/fraud partners."
+      },
+      "summary": "OpenAI launched ChatGPT Wallet Nov 13 with Amex, Chase, Mastercard, and Visa for limited U.S. ChatGPT Pro users. Dots pay through merchants\u2019 existing checkouts (not Instant Checkout inside ChatGPT) after biometric per-purchase approval and network tokenization. Includes Commerce Partner Playbook, Web Bot Auth / WebMCP guidance, PSP partners (Adyen, Checkout.com, Stripe) and fraud vendors (Forter, Riskified, Sardine, Signifyd). Notes Amazon blocking Muse; Visa Intelligent Commerce Connect and Mastercard Agent Connect; Visa/BILL/Billtrust B2B invoice-agent pilot.",
+      "signals": [
+        "Strategy shift: Instant Checkout (Sep 2025) \u2192 merchant-app/checkout (Mar) \u2192 Wallet fits existing merchant systems.",
+        "Checkout stays with retailer; pricing/fulfillment/returns/customer service remain merchant-controlled.",
+        "Still human-in-the-loop per purchase; full delegation (limits by spend/category/time) is future with enhanced safeguards.",
+        "Merchant readiness blockers: CDN/firewall bot blocks, fraud false positives \u2014 Web Bot Auth and fraud-vendor partnerships are the mitigation path.",
+        "Amazon blocked Muse \u2014 major retailers may refuse agent shopping even when protocols exist.",
+        "Networks shipping parallel rails: Visa Intelligent Commerce Connect; Mastercard Agent Connect; B2B agent invoice pay (Visa/BILL/Billtrust)."
+      ],
+      "items": [
+        {
+          "id": "chatgpt-wallet-launch-2026-11-13",
+          "title": "ChatGPT Wallet launch mechanics",
+          "date": "2026-11-13",
+          "topics": [
+            "agentic-commerce",
+            "payments",
+            "network-tokens"
+          ],
+          "entities": [
+            "OpenAI",
+            "ChatGPT",
+            "American Express",
+            "Chase",
+            "Mastercard",
+            "Visa"
+          ],
+          "relevance": "high",
+          "summary": [
+            "Limited U.S. ChatGPT Pro rollout; partners Amex, Chase, Mastercard, Visa named.",
+            "User reviews items/total/card; biometric approve; network token issued; merchant and agent never see PAN.",
+            "Rewards and eligible dispute protections retained; banks/networks still evaluate txs."
+          ],
+          "signals": [
+            "Confirms Chase as a named Wallet partner alongside the three networks.",
+            "Tokenized network credentials, not Instant Checkout in-chat settlement."
+          ]
+        },
+        {
+          "id": "openai-commerce-partner-playbook-bot-auth",
+          "title": "Commerce Partner Playbook, Web Bot Auth, WebMCP, fraud partners",
+          "date": "2026-11-13",
+          "topics": [
+            "agentic-commerce",
+            "merchants",
+            "fraud"
+          ],
+          "entities": [
+            "OpenAI",
+            "Adyen",
+            "Checkout.com",
+            "Stripe",
+            "Forter",
+            "Riskified",
+            "Sardine",
+            "Signifyd",
+            "Amazon",
+            "Meta",
+            "Muse"
+          ],
+          "relevance": "high",
+          "summary": [
+            "Playbook: claim/verify business in ChatGPT; keep product/pricing/availability current.",
+            "CDN/firewall config via Web Bot Auth for signed agent requests; browser access needs no plugin/feed.",
+            "PSP partners Adyen, Checkout.com, Stripe; fraud partners Forter, Riskified, Sardine, Signifyd.",
+            "WebMCP tools/plugins for availability, carts, actions; Amazon blocked Muse in September."
+          ],
+          "signals": [
+            "Agent commerce failure mode is as much bot/fraud infra as payments protocol.",
+            "WebMCP joining MCP as merchant-facing agent tooling surface."
+          ]
+        },
+        {
+          "id": "networks-agent-connect-b2b-pilot",
+          "title": "Visa Intelligent Commerce Connect, Mastercard Agent Connect, B2B invoice agent pilot",
+          "date": "2026-11-13",
+          "topics": [
+            "agentic-commerce",
+            "payments",
+            "b2b"
+          ],
+          "entities": [
+            "Visa",
+            "Mastercard",
+            "OpenAI",
+            "BILL",
+            "Billtrust"
+          ],
+          "relevance": "high",
+          "summary": [
+            "Visa Intelligent Commerce Connect (Apr) single integration for agent-led txs; June OpenAI payments partnership.",
+            "Mastercard Agent Connect (Sep) links merchants, AI agents, platforms, payment providers.",
+            "Oct: Visa + BILL + Billtrust live pilot for authorized agents paying approved invoices via supplier portals."
+          ],
+          "signals": [
+            "Agentic payments expanding into B2B AP, not only consumer shopping.",
+            "Network \u2018Connect\u2019 products compete to be the merchant/agent integration hub."
+          ]
+        }
+      ]
     },
     {
       "id": "exec-summary-agentic-commerce-2026-11-10",
