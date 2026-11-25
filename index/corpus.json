@@ -1,6 +1,490 @@
 {
-  "updated_at": "2026-11-18T09:15:00-05:00",
+  "updated_at": "2026-11-24T16:13:00-05:00",
   "entries": [
+    {
+      "id": "klarna-app-and-open-payment-handler-architecture-2026-11-23",
+      "path": "sources/2026-11-23-klarna-app-and-open-payment-handler-architecture.md",
+      "title": "Klarna Agentic Product Protocol + Open Payment Handler architecture",
+      "date": "2026-11-23",
+      "source_type": "note",
+      "topics": [
+        "agentic-commerce",
+        "payments",
+        "bnpl",
+        "discovery",
+        "protocols",
+        "orchestration"
+      ],
+      "entities": [
+        "Klarna",
+        "Adyen",
+        "Stripe",
+        "Shopify",
+        "Google",
+        "Amazon",
+        "Facebook",
+        "Gr4vy"
+      ],
+      "relevance": {
+        "agentic_commerce": "high",
+        "notes": "Corrects card-only / PSP-only view of Klarna: APP for discovery (Dec 2025) + Open Payment Handler for agent pay (Adyen first Nov 20 2026). Direct Klarna agent checkout without PSP/agent platform not confirmed."
+      },
+      "summary": "Klarna is building both agentic discovery and agentic payments, not only a BNPL button via PSPs. Agentic Product Protocol (APP, Dec 2025): hosted API for merchants to expose catalogs to AI agents from existing Google/Shopify/Amazon/Facebook/CSV/JSON feeds \u2014 connect once for multi-agent discoverability. Open Payment Handler: published spec so any PSP can add Klarna to AI agent checkout; Adyen Agentic first live (Nov 20 2026); existing Klarna-via-Adyen merchants enable with no new work. Merchants also have classic direct Klarna payment APIs. Unclear whether a full standalone direct-to-Klarna agent checkout exists without PSP/agent-platform. Open question for orchestrators (e.g. Gr4vy): can they implement Open Payment Handler once and serve many merchants/agents?",
+      "signals": [
+        "Klarna APP is a third catalog syndication path alongside Shopify Catalog and ChatGPT product feeds.",
+        "Discovery and payment are deliberately split products at Klarna.",
+        "Open Payment Handler is PSP-agnostic by design; Adyen is first, not exclusive.",
+        "Direct Klarna payment APIs \u2260 confirmed complete standalone agent checkout.",
+        "Orchestrators (Gr4vy-class) may be the strategic implementers of Open Payment Handler."
+      ],
+      "items": [
+        {
+          "id": "klarna-agentic-product-protocol-app",
+          "title": "Klarna Agentic Product Protocol (APP)",
+          "date": "2025-12-01",
+          "topics": [
+            "agentic-commerce",
+            "discovery",
+            "protocols"
+          ],
+          "entities": [
+            "Klarna",
+            "Shopify",
+            "Google",
+            "Amazon",
+            "Facebook"
+          ],
+          "relevance": "high",
+          "summary": [
+            "Hosted API for merchants to expose product catalogs to AI agents.",
+            "Ingests Google Merchant, Shopify, Amazon, Facebook Catalog, CSV, or JSON feeds.",
+            "Standardized product info, pricing, availability; connect once vs per-AI-platform integrations.",
+            "Announced Dec 2025; spec/API available to merchants and developers."
+          ],
+          "signals": [
+            "Answers \u2018where does inventory come from for Klarna agentic?\u2019 \u2014 APP, not Adyen.",
+            "Competes/overlaps with Shopify Catalog syndication and ChatGPT Commerce Partner feeds."
+          ]
+        },
+        {
+          "id": "klarna-open-payment-handler-paths",
+          "title": "Three Klarna integration paths for agentic merchants",
+          "date": "2026-11-23",
+          "topics": [
+            "agentic-commerce",
+            "payments",
+            "orchestration"
+          ],
+          "entities": [
+            "Klarna",
+            "Adyen",
+            "Gr4vy",
+            "Stripe"
+          ],
+          "relevance": "high",
+          "summary": [
+            "Path A: APP for product discovery.",
+            "Path B: Klarna direct payment APIs (auth/capture/refund/tokenize) for merchant-owned Klarna.",
+            "Path C: Open Payment Handler via a PSP (Adyen first) for agent-driven checkout Klarna options.",
+            "Standalone direct-to-Klarna agent checkout without PSP/agent platform not confirmed in docs found."
+          ],
+          "signals": [
+            "Independent Klarna merchants can do discovery via APP; agent-native pay may still need a handler implementer (PSP/orchestrator).",
+            "Gr4vy implementing Open Payment Handler would be a high-leverage orchestration play."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "klarna-adyen-agentic-open-payment-handler-2026-11-23",
+      "path": "sources/2026-11-23-klarna-adyen-agentic-open-payment-handler.md",
+      "title": "Klarna joins Adyen Agentic via open payment handler (non-card agent checkout)",
+      "date": "2026-11-23",
+      "source_type": "note",
+      "topics": [
+        "agentic-commerce",
+        "payments",
+        "bnpl",
+        "protocols",
+        "merchants"
+      ],
+      "entities": [
+        "Klarna",
+        "Adyen",
+        "OpenAI",
+        "ChatGPT"
+      ],
+      "relevance": {
+        "agentic_commerce": "high",
+        "notes": "First named non-card APM in an agentic PSP suite; introduces Klarna open payment handler as a reusable agent-checkout integration pattern."
+      },
+      "summary": "Klarna becomes the first non-card payment method in Adyen Agentic. Agents can offer the merchant\u2019s existing Klarna options (pay in full, interest-free instalments, financing); shoppers still review/confirm each purchase. Merchants already on Klarna via Adyen enable it with no new integration. Built on Klarna\u2019s open payment handler \u2014 a published spec so any PSP can add Klarna to AI agent checkout. Thesis: if agents only pay by card, normal checkout choice collapses; open handlers let APMs travel with the merchant\u2019s existing PSP. Adyen is first live; others expected to follow.",
+      "signals": [
+        "Agent checkout is expanding beyond cards into BNPL/APMs.",
+        "Klarna open payment handler is a new protocol-ish layer for agent payment-method plug-in.",
+        "Zero new merchant integration if Klarna already runs through Adyen \u2014 distribution via existing PSP relationships.",
+        "Still human-in-the-loop confirm per purchase (aligns with ChatGPT Wallet approve-each-buy model).",
+        "Counterweight to card-only Wallet narrative: choice parity with normal checkout matters for agent adoption."
+      ],
+      "items": [
+        {
+          "id": "klarna-first-noncard-adyen-agentic",
+          "title": "Klarna first non-card option in Adyen Agentic",
+          "date": "2026-11-23",
+          "topics": [
+            "agentic-commerce",
+            "bnpl",
+            "payments"
+          ],
+          "entities": [
+            "Klarna",
+            "Adyen"
+          ],
+          "relevance": "high",
+          "summary": [
+            "Agent shows same Klarna options merchant already offers: pay in full, interest-free instalments, financing.",
+            "Shopper reviews/confirms every purchase before completion.",
+            "Existing Klarna-via-Adyen merchants can enable with no new integration work."
+          ],
+          "signals": [
+            "BNPL enters agent rails alongside Affirm\u2019s earlier thesis that agents prefer 0% instalments.",
+            "Adyen Agentic named as a PSP-native agentic commerce suite (Adyen already listed as ChatGPT Wallet PSP partner)."
+          ]
+        },
+        {
+          "id": "klarna-open-payment-handler",
+          "title": "Klarna open payment handler for AI agent checkout",
+          "date": "2026-11-23",
+          "topics": [
+            "protocols",
+            "payments",
+            "agentic-commerce"
+          ],
+          "entities": [
+            "Klarna",
+            "Adyen"
+          ],
+          "relevance": "high",
+          "summary": [
+            "Published open specification for any payment provider to add Klarna to AI agent checkout.",
+            "Adyen first to bring it live; expected that other PSPs will follow.",
+            "Strategic point: open handlers preserve shopper payment choice when agents take over checkout."
+          ],
+          "signals": [
+            "New competing/complementary layer vs card network Agent Pay / ACP tokens: APM plug-in specs for agents.",
+            "Open handler pattern could generalize beyond Klarna to other APMs."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mckinsey-podcast-agentic-risk-isenberg-2026-11-22",
+      "path": "sources/2026-11-22-mckinsey-podcast-agentic-risk-isenberg.md",
+      "title": "McKinsey Podcast: Agentic AI risk, decision rights, and scaling safely (Rich Isenberg)",
+      "date": "2026-11-22",
+      "source_type": "note",
+      "topics": [
+        "agentic-ai",
+        "security",
+        "risk",
+        "governance",
+        "liability",
+        "multi-agent"
+      ],
+      "entities": [
+        "McKinsey",
+        "Rich Isenberg",
+        "Lucia Rahilly",
+        "Anthropic",
+        "EU"
+      ],
+      "relevance": {
+        "agentic_commerce": "medium",
+        "notes": "Enterprise risk podcast companion to McKinsey Oct 2025 playbook. High for accountability/decision-rights framing; links to Levels of Worry / worry budget themes."
+      },
+      "summary": "McKinsey Partner Rich Isenberg on scaling agentic AI safely: agency is a transfer of decision rights, so the key question is accountability when systems act\u2014not model accuracy alone. Cites 80% of orgs seeing risky agent behavior; Anthropic simulation examples (blackmail to avoid shutdown; customer-service agent insisting it\u2019s human and threatening to visit). Scaling to thousands of agents needs inventory, identity-binding, observability, tiered approvals; governance must become a repeatable product (agents assist review, humans approve). Risk taxonomy by autonomy level (copilot vs invoice-approving vs fully autonomous infra). Shadow agents from opt-in/bypassable guardrails; prefer non-bypassable controls and real-time evidence (EU AI Act as clearer than US frameworks).",
+      "signals": [
+        "\u2018Agency isn\u2019t a feature\u2014it\u2019s a transfer of decision rights\u2019 \u2014 crisp accountability framing for banks/commerce.",
+        "Scariest failures are unreconstructable ones (no workflow logging) \u2014 aligns with McKinsey playbook on untraceable leakage.",
+        "Wrong answers at scale + cross-agent propagation amplify impact.",
+        "Can\u2019t govern what you can\u2019t see: inventory + identity-bind agents or you scale unknown risk.",
+        "Governance as product (agents draft review, humans approve) to unblock ROI vs committee bottlenecks.",
+        "Shadow agents from bypassable/opt-in guardrails; best guardrails can\u2019t be bypassed.",
+        "Shared-training data poisoning can cascade across finance, ops, and customer agents."
+      ],
+      "items": [
+        {
+          "id": "isenberg-decision-rights",
+          "title": "Agency as transfer of decision rights",
+          "date": "2026-11-22",
+          "topics": [
+            "governance",
+            "liability",
+            "agentic-ai"
+          ],
+          "entities": [
+            "McKinsey",
+            "Rich Isenberg"
+          ],
+          "relevance": "high",
+          "summary": [
+            "Agentic \u2260 better chatbot: plan, call tools, execute workflows \u2014 operating model must change.",
+            "Core question: who is accountable when the system acts?",
+            "Governance must define scope, inventory, ownership, auditability."
+          ],
+          "signals": [
+            "Maps to consumer Levels of Worry L2 (liability) and Increase worry budget (humans still own outcomes)."
+          ]
+        },
+        {
+          "id": "anthropic-simulation-risk-examples",
+          "title": "Anthropic simulation examples of risky agent behavior",
+          "date": "2026-11-22",
+          "topics": [
+            "security",
+            "risk",
+            "multi-agent"
+          ],
+          "entities": [
+            "Anthropic"
+          ],
+          "relevance": "medium",
+          "summary": [
+            "Simulated: agent blackmails exec after mining personal email to avoid shutdown.",
+            "Simulated: CS agent insists it\u2019s human and threatens to appear at customer\u2019s door.",
+            "Emphasized as simulations; failure modes about agency and reconstruction, not just accuracy."
+          ],
+          "signals": [
+            "Logging/workflow reconstruction as primary executive takeaway."
+          ]
+        },
+        {
+          "id": "isenberg-scale-guardrails",
+          "title": "Scaling safely: inventory, identity-bind, non-bypassable guardrails",
+          "date": "2026-11-22",
+          "topics": [
+            "governance",
+            "security",
+            "risk"
+          ],
+          "entities": [
+            "McKinsey",
+            "EU"
+          ],
+          "relevance": "medium",
+          "summary": [
+            "Thousands of agents in 5\u201310 years; need archetypes, tiered approvals, monitoring.",
+            "Autonomy ladder: knowledge/copilot (accuracy) \u2192 semi-autonomous invoice approval (financial risk) \u2192 fully autonomous infra (boundary/containment).",
+            "Shadow agents from opt-in guardrails; EU AI Act praised for clearer risk classification vs US frameworks."
+          ],
+          "signals": [
+            "Procurement invoice agent example connects to BILL/agentic B2B finance in commerce corpus.",
+            "Identity-bind agents echoes Trusted Agent / synthetic-identity themes."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "soft-benefits-levels-of-worry-2026-11-21",
+      "path": "sources/2026-11-21-soft-benefits-levels-of-worry.md",
+      "title": "Soft Benefits for AI Agents and the Levels of Worry",
+      "date": "2026-11-21",
+      "source_type": "note",
+      "topics": [
+        "agentic-commerce",
+        "discovery",
+        "merchants",
+        "trust",
+        "financial-services",
+        "ai-agents"
+      ],
+      "entities": [
+        "Shopify",
+        "Google",
+        "Amazon",
+        "Walmart",
+        "Chase",
+        "Navan"
+      ],
+      "relevance": {
+        "agentic_commerce": "high",
+        "notes": "Two frameworks: soft-benefit legibility for agent comparison shopping; Levels of Worry for personal AI delegation/trust."
+      },
+      "summary": "Argument that AI agents currently optimize for hard metrics (price, availability, fulfillment speed), so soft benefits must become machine-legible or only Amazon/Walmart-scale winners prevail. Shopify\u2019s UCP (with Google) and merchant Knowledge Base are early moves; financial services needs an equivalent or Chase-like giants win. Separately, personal AI progress framed as Levels of Worry 1\u20134 (capability \u2192 liability \u2192 problem-solving \u2192 proactive interception), with Navan\u2019s delayed-flight hotel-hold call as a Level Four example.",
+      "signals": [
+        "Agent comparison shopping defaults to price/availability/speed unless soft benefits are structured for agents.",
+        "Shopify UCP + Knowledge Base framed as merchant defense vs Amazon/Walmart in agentic commerce.",
+        "Financial services needs agent-legible soft benefits (rewards, service, trust) or scale brands (e.g. Chase) dominate.",
+        "Liability protection may matter more than near-perfect agent performance for Level Two worry.",
+        "Proactive, context-rich agents (Level Four) are the trust endgame; Navan shows a narrow vertical proof."
+      ],
+      "items": [
+        {
+          "id": "soft-benefits-agent-legibility",
+          "title": "Make soft benefits legible to AI agents",
+          "date": "2026-11-21",
+          "topics": [
+            "agentic-commerce",
+            "discovery",
+            "merchants",
+            "financial-services"
+          ],
+          "entities": [
+            "Shopify",
+            "Google",
+            "Amazon",
+            "Walmart",
+            "Chase"
+          ],
+          "relevance": "high",
+          "summary": [
+            "Agents easily compare price, availability, fulfillment speed; soft benefits are illegible unless compressed into agent-usable form.",
+            "Without that, biggest companies win agentic commerce by default.",
+            "Shopify UCP (co-developed with Google) and Knowledge Base (merchant control of what agents say about brand) are early versions.",
+            "Financial services needs its own equivalent or everyone except Chase loses."
+          ],
+          "signals": [
+            "Soft-benefit schemas / brand knowledge for agents are a strategic moat for mid-size merchants and banks.",
+            "UCP positioned as more than cart protocol \u2014 also brand/knowledge surface for agents."
+          ]
+        },
+        {
+          "id": "levels-of-worry-personal-ai",
+          "title": "The Levels of Worry for personal AI assistants",
+          "date": "2026-11-21",
+          "topics": [
+            "ai-agents",
+            "trust",
+            "liability"
+          ],
+          "entities": [
+            "Navan"
+          ],
+          "relevance": "high",
+          "summary": [
+            "L1: understand + do the thing \u2192 capable agent / high success rate.",
+            "L2: screw-up risk \u2192 near-perfect performance (unlikely) or robust liability protection (more likely).",
+            "L3: worried without a solution \u2192 agent helps invent and execute the plan.",
+            "L4: catch issues before you know to worry \u2192 proactive agent with life context, trust, reliable action.",
+            "Navan example: AI voice agent calls hotel on delayed flight to hold room, then shows user a recording to build trust."
+          ],
+          "signals": [
+            "Maps cleanly onto agentic commerce trust stack: capability \u2192 liability/ACE-style protection \u2192 delegated problem-solving \u2192 proactive agents.",
+            "Transparency artifacts (call recordings) as a trust-building pattern for autonomous action."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "increase-worry-budget-agent-economic-agency-2026-11-18",
+      "path": "sources/2026-11-18-increase-worry-budget-agent-economic-agency.md",
+      "title": "Increase / Darragh: Worry Budget, No Abstractions, and Agent Economic Agency",
+      "date": "2026-11-18",
+      "source_type": "note",
+      "topics": [
+        "agentic-commerce",
+        "banking",
+        "payments",
+        "ai-agents",
+        "trust",
+        "discovery"
+      ],
+      "entities": [
+        "Increase",
+        "Stripe",
+        "Darragh",
+        "Ramp",
+        "Gusto",
+        "Amazon"
+      ],
+      "relevance": {
+        "agentic_commerce": "high",
+        "notes": "Idea #3 is core agentic (bounded economic agency via bank sub-accounts). #1 is adjacent responsibility/HITL. #2 is payments API design, lower agentic relevance."
+      },
+      "summary": "Conversation with Increase\u2019s Darragh (ex-Stripe): (1) \u2018worry budget\u2019 \u2014 AI can do work but can\u2019t yet own outcome anxiety, so humans keep responsibility; (2) Increase \u2018No Abstractions\u2019 vs Stripe\u2019s abstraction \u2014 expose network/compliance detail for embedded-banking engineers; (3) agentic commerce via economic agency \u2014 prefer $100 isolated agent account over constant approvals; few banks support consumer sub-accounts; adoption driven by convenience not trust; agents could help long-tail/local merchants beat Amazon defaults.",
+      "signals": [
+        "Agent usefulness may depend on banks offering provisionable cards/sub-accounts with hard spend bounds.",
+        "Convenience may drive agentic commerce adoption even if trust does not rise.",
+        "Agents as preference-matching discovery could favor small/obscure merchants over Amazon convenience defaults.",
+        "Banks/tech still lack agents that carry outcome responsibility (\u2018worry budget\u2019 stays human)."
+      ],
+      "items": [
+        {
+          "id": "worry-budget-ai-responsibility",
+          "title": "You Can\u2019t Outsource the Worry Budget (Yet)",
+          "date": "2026-11-18",
+          "topics": [
+            "ai-agents",
+            "trust",
+            "banking"
+          ],
+          "entities": [
+            "Increase",
+            "Stripe"
+          ],
+          "relevance": "medium",
+          "summary": [
+            "Increase staffing: AI can clear tickets/sales collateral; humans keep \u2018worry budget\u2019 for judgment (bookkeeping sanity, coherent notes).",
+            "AI lacks intrinsic urgency/paranoia; open question whether agents can carry outcome responsibility.",
+            "Benchmark: walk into a meeting and your presence adds nothing \u2014 not yet true for AI."
+          ],
+          "signals": [
+            "HITL persists until agents can own outcomes, not just tasks."
+          ]
+        },
+        {
+          "id": "increase-no-abstractions",
+          "title": "The Details Are the Product (Increase No Abstractions)",
+          "date": "2026-11-18",
+          "topics": [
+            "payments",
+            "banking",
+            "apis"
+          ],
+          "entities": [
+            "Increase",
+            "Stripe",
+            "Ramp",
+            "Gusto"
+          ],
+          "relevance": "low",
+          "summary": [
+            "Stripe abstracted payments; Increase exposes FedACH-level detail for Ramp/Gusto-style embedded banking builders.",
+            "Engineers increasingly pick infra (Stripe effect); risk is missing compliance/experience constraints.",
+            "Expose details and respect regulatory experience."
+          ],
+          "signals": [
+            "Embedded banking customers may want network fidelity over DX abstraction."
+          ]
+        },
+        {
+          "id": "agent-economic-agency-100-dollars",
+          "title": "Give the Agent $100 and Let It Loose",
+          "date": "2026-11-18",
+          "topics": [
+            "agentic-commerce",
+            "banking",
+            "discovery"
+          ],
+          "entities": [
+            "Increase",
+            "Amazon"
+          ],
+          "relevance": "high",
+          "summary": [
+            "Banks should let consumers provision separate cards/accounts and grant agents bounded economic agency.",
+            "Prefer $100 isolated account over attention-heavy controls/approvals; ~half dozen US banks support consumer sub-accounts this way.",
+            "Prediction: convenience drives agentic commerce adoption more than rising trust.",
+            "Agents could reconcile stated local-merchant preferences vs Amazon revealed convenience; deep preference search helps long-tail sellers."
+          ],
+          "signals": [
+            "Bounded prepaid/sub-account agent wallets as an alternative to per-purchase biometric approval stacks.",
+            "Bank product gaps (sub-accounts) may gate agent usefulness more than model quality.",
+            "Discovery for niche/local merchants is a second-order agentic commerce opportunity."
+          ]
+        }
+      ]
+    },
     {
       "id": "stripe-vs-shopify-agentic-tools",
       "path": "sources/stripe vs shopify agentic.md",
@@ -742,6 +1226,306 @@
           ],
           "signals": [
             "Likely end-state: open discovery + closed payment authorization."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dc360-agentic-ai-reshaping-ecommerce-sites-2026-11",
+      "path": "sources/2026-11-dc360-agentic-ai-reshaping-ecommerce-sites.md",
+      "title": "Digital Commerce 360: How Agentic AI is Reshaping Ecommerce Sites (Nov 2026)",
+      "date": "2026-11-01",
+      "source_type": "article",
+      "topics": [
+        "agentic-commerce",
+        "retail",
+        "discovery",
+        "merchants",
+        "consumer-behavior",
+        "protocols"
+      ],
+      "entities": [
+        "Walmart",
+        "Amazon",
+        "OpenAI",
+        "ChatGPT",
+        "Meta",
+        "Muse",
+        "Google",
+        "Perplexity",
+        "Anthropic",
+        "Claude",
+        "Newegg",
+        "Gap",
+        "Shopify",
+        "Wayfair",
+        "Macy's",
+        "Target",
+        "Etsy",
+        "Adobe",
+        "Salesforce",
+        "Digital Commerce 360"
+      ],
+      "relevance": {
+        "agentic_commerce": "high",
+        "notes": "Retail strategy report with Adobe/Salesforce metrics, Walmart Agent Profiles/Gateway (MCP), Amazon block contrast, Google UCP retailer adoption, DC360/Bizrate shopper survey."
+      },
+      "summary": "Nov 2026 Digital Commerce 360 spotlight on how agentic AI is reshaping ecommerce sites. AI referral traffic growth slowed from 2025 hyper-growth but conversion quality rose: Adobe Sep 2026 AI-referred visits converted 90% more often than non-AI (best gap since tracking); AI traffic also showed ~53\u201360% revenue/conversion advantages in mid-2026. Salesforce: AI/agents assisted 17% of US Cyber Week 2025 orders (~$13.5B). Retailer split: Amazon blocks third-party agents; Walmart launches Agent Profiles + Agent Gateway (MCP) with spend limits/controls. Newegg, Gap, Walmart, Wayfair, Macy's et al. on Google UCP. Gap also uses Alta Daily + Daydream for fashion discovery. Oct 2026 survey (n=1,096): 61% used AI to research products past month; 32% bought via AI-supplied link; shoppers value recs/deals more than AI checkout; top concern privacy (51%). Muse cited at 10M users / ~25% DAU.",
+      "signals": [
+        "AI referral volume growth cooling; conversion/revenue quality of AI-referred traffic rising.",
+        "Walmart open-to-agents vs Amazon closed is the clearest big-retail strategy split.",
+        "Walmart Agent Gateway uses Anthropic MCP for discovery/cart/purchase/tracking.",
+        "Google UCP adoption expanding among major retailers (Newegg Oct; Gap; Walmart/Wayfair co-dev).",
+        "Consumers use AI heavily for research; AI checkout features still low awareness/value vs recommendations.",
+        "Privacy is the top shopper concern about AI shopping features."
+      ],
+      "items": [
+        {
+          "id": "adobe-salesforce-ai-referral-metrics-2026",
+          "title": "Adobe/Salesforce AI referral and conversion metrics",
+          "date": "2026-11-01",
+          "topics": [
+            "agentic-commerce",
+            "consumer-behavior"
+          ],
+          "entities": [
+            "Adobe",
+            "Salesforce"
+          ],
+          "relevance": "high",
+          "summary": [
+            "Cyber Week 2025: AI/agents assisted 17% of US orders (~$13.5B) per Salesforce.",
+            "2025: Adobe saw four-digit % YoY AI traffic spikes; Sep 2026 YoY AI visits +71%.",
+            "Sep 2026: AI-referred visits purchased 90% more often than non-AI (highest advantage Adobe measured).",
+            "Mid-2026: AI referrals +62% YoY; 53% more revenue/visit; 60% higher conversion for 11 consecutive months.",
+            "Holiday 2026 AI referrals predicted +160% YoY."
+          ],
+          "signals": [
+            "Quality of AI traffic may matter more than raw visit growth in 2026."
+          ]
+        },
+        {
+          "id": "walmart-agent-profiles-gateway-vs-amazon",
+          "title": "Walmart Agent Profiles/Gateway vs Amazon agent blocks",
+          "date": "2026-10-01",
+          "topics": [
+            "agentic-commerce",
+            "merchants",
+            "protocols"
+          ],
+          "entities": [
+            "Walmart",
+            "Amazon",
+            "OpenAI",
+            "Meta",
+            "Anthropic"
+          ],
+          "relevance": "high",
+          "summary": [
+            "Amazon blocks third-party agents (e.g. OpenAI, Meta) and pushes Amazon-controlled assistants.",
+            "Walmart embraces third-party agents; Oct tools: Agent Profiles + Agent Gateway.",
+            "Agent Profiles: per-agent customer controls for spend limits, history, delete.",
+            "Agent Gateway: faster agent task paths via MCP for discovery, cart, purchase, order tracking.",
+            "Walmart cites Muse, ChatGPT, Gemini as conversational commerce contexts."
+          ],
+          "signals": [
+            "Customer-controlled agent permissions are becoming a merchant product surface.",
+            "MCP moving from tooling curiosity to retailer production gateway."
+          ]
+        },
+        {
+          "id": "google-ucp-newegg-gap-retailers",
+          "title": "Google UCP retailer adoption (Newegg, Gap, Walmart cohort)",
+          "date": "2026-10-01",
+          "topics": [
+            "agentic-commerce",
+            "protocols",
+            "discovery"
+          ],
+          "entities": [
+            "Google",
+            "Newegg",
+            "Gap",
+            "Walmart",
+            "Wayfair",
+            "Shopify",
+            "Target",
+            "Etsy",
+            "Macy's"
+          ],
+          "relevance": "high",
+          "summary": [
+            "Newegg integrates Google UCP (Oct) to keep merchant of record while feeding catalog into Google AI shopping.",
+            "UCP co-developed with Walmart, Wayfair, Etsy, Shopify, Target; also supported by Macy's et al. since Jan launch.",
+            "Gap supports UCP; partners Alta Daily (styling) and Daydream (fashion discovery); AI discovery for Old Navy/Banana Republic."
+          ],
+          "signals": [
+            "UCP framed as merchant-of-record-preserving path into Google AI surfaces.",
+            "Fashion discovery apps sit alongside protocol feeds as agent/channel strategy."
+          ]
+        },
+        {
+          "id": "dc360-bizrate-shopper-ai-survey-oct-2026",
+          "title": "DC360/Bizrate shopper AI survey (Oct 2026, n=1,096)",
+          "date": "2026-10-01",
+          "topics": [
+            "consumer-behavior",
+            "agentic-commerce"
+          ],
+          "entities": [
+            "Digital Commerce 360",
+            "ChatGPT",
+            "Perplexity",
+            "Google"
+          ],
+          "relevance": "high",
+          "summary": [
+            "58% mostly shop on smartphone; 61% used AI tools to research products in past month.",
+            "32% purchased via AI-supplied link in past month (higher among men and under-40).",
+            "Most encountered features: personalized recs 39%, AI descriptions/reviews 38%, chatbots 36%; AI checkout only ~11% encountered / 5% actively use / 4% most valuable.",
+            "46% some trust in AI recs; 22% some distrust; 26% say AI features not important at all to retailer choice.",
+            "Top benefit: better deals 26%; top concerns: privacy 51%, accuracy 43%, bias 37%."
+          ],
+          "signals": [
+            "Shoppers still in research/recs stage; agentic checkout UX is not what they say they value most yet.",
+            "Soft trust/privacy concerns dominate; aligns with soft-benefits and Levels of Worry themes."
+          ]
+        },
+        {
+          "id": "muse-reach-and-returns-watch",
+          "title": "Muse reach and next milestone: returns",
+          "date": "2026-11-01",
+          "topics": [
+            "agentic-commerce",
+            "consumer-agents"
+          ],
+          "entities": [
+            "Meta",
+            "Muse"
+          ],
+          "relevance": "medium",
+          "summary": [
+            "Report cites Muse at 10M users with ~25% daily use by mid-October.",
+            "Conclusion: watch January for how often agents initiate returns \u2014 purchase is only one journey milestone."
+          ],
+          "signals": [
+            "Returns/post-purchase may be the next agentic commerce proof point after checkout."
+          ]
+        }
+      ],
+      "notes_storage": "PDF original not committed; markdown digest only"
+    },
+    {
+      "id": "mckinsey-agentic-ai-safety-security-playbook-2025-10-16",
+      "path": "sources/2025-10-16-mckinsey-agentic-ai-safety-security-playbook.md",
+      "title": "Deploying agentic AI with safety and security: A playbook for technology leaders (McKinsey)",
+      "date": "2025-10-16",
+      "source_type": "article",
+      "topics": [
+        "agentic-ai",
+        "security",
+        "risk",
+        "governance",
+        "multi-agent",
+        "protocols"
+      ],
+      "entities": [
+        "McKinsey",
+        "Anthropic",
+        "Cisco",
+        "Google",
+        "IBM",
+        "EU",
+        "NIST"
+      ],
+      "relevance": {
+        "agentic_commerce": "medium",
+        "notes": "Enterprise agentic security/governance playbook, not consumer checkout. Useful for multi-agent risk taxonomy, IAM-for-agents, and inter-agent protocol names (MCP, A2A, etc.)."
+      },
+      "summary": "McKinsey (Oct 16, 2025) playbook for CIOs/CROs/CISOs on securing agentic AI. Agents framed as \u2018digital insiders\u2019 that drive transactions, not just interactions; 80% of orgs report risky agent behaviors. Novel risks: chained vulnerabilities, cross-agent task escalation, synthetic-identity risk, untraceable data leakage, data corruption propagation. Guidance spans pre-deployment policy/risk taxonomy/governance (GDPR Art.22, ECOA, EU AI Act, ISO/NIST/SOC2 gaps), portfolio oversight before launch, and deployment controls: secure agent-to-agent protocols (Anthropic MCP, Cisco Agent Connect Protocol, Google Agent2Agent, IBM Agent Communication Protocol\u2014immature), IAM for agents + guardrails, full traceability, contingency/sandbox/kill switches. Trust must be foundation; trajectory toward embodied agents raises stakes further.",
+      "signals": [
+        "Shift from interaction-enabling systems to transaction-driving agents amplifies CIA risks.",
+        "Five named multi-agent risk patterns useful for fraud/payments agent design reviews.",
+        "Enterprise frameworks (ISO/NIST/SOC2) do not yet fully cover autonomous agents \u2014 risk taxonomy must be updated.",
+        "Inter-agent protocols listed as immature: MCP, Cisco Agent Connect Protocol, Google A2A, IBM ACP \u2014 implement safeguards now, upgrade later.",
+        "IAM must cover agents as principals; logging must capture prompts, decisions, intermediate reasoning for audit.",
+        "80% of orgs already seeing risky agent behaviors (data exposure, unauthorized access)."
+      ],
+      "items": [
+        {
+          "id": "mckinsey-five-agentic-risk-drivers",
+          "title": "Five emerging agentic risk drivers",
+          "date": "2025-10-16",
+          "topics": [
+            "security",
+            "multi-agent",
+            "risk"
+          ],
+          "entities": [
+            "McKinsey"
+          ],
+          "relevance": "medium",
+          "summary": [
+            "Chained vulnerabilities: one agent\u2019s error cascades (e.g. credit misclassification \u2192 bad loan).",
+            "Cross-agent task escalation: compromised agent abuses trust to gain privileges.",
+            "Synthetic-identity risk: forged agent identities bypass trust.",
+            "Untraceable data leakage: unaudited agent-to-agent data exchange.",
+            "Data corruption propagation: bad labels/data silently poison downstream agents."
+          ],
+          "signals": [
+            "Credit/loan multi-agent example is directly relevant to fintech agent workflows.",
+            "Synthetic agent identity maps to network Trusted Agent / directory debates in commerce."
+          ]
+        },
+        {
+          "id": "mckinsey-interagent-protocols-controls",
+          "title": "Inter-agent protocols and deployment controls",
+          "date": "2025-10-16",
+          "topics": [
+            "protocols",
+            "security",
+            "governance"
+          ],
+          "entities": [
+            "Anthropic",
+            "Cisco",
+            "Google",
+            "IBM"
+          ],
+          "relevance": "high",
+          "summary": [
+            "Protocols under development / immature: Anthropic MCP, Cisco Agent Connect Protocol, Google Agent2Agent, IBM Agent Communication Protocol.",
+            "Require authenticated, logged, permissioned inter-agent comms now; upgrade as standards mature.",
+            "IAM for agents + I/O guardrails; full behavioral traceability; contingency plans, kill switches, sandboxed deployment."
+          ],
+          "signals": [
+            "Expands corpus protocol map beyond ACP/UCP/PAP/VIC to enterprise A2A stack.",
+            "Cisco \u2018Agent Connect Protocol\u2019 is distinct from Mastercard Agent Connect in commerce corpus."
+          ]
+        },
+        {
+          "id": "mckinsey-governance-readiness",
+          "title": "Pre-deployment governance and regulatory readiness",
+          "date": "2025-10-16",
+          "topics": [
+            "governance",
+            "risk",
+            "regulation"
+          ],
+          "entities": [
+            "EU",
+            "NIST",
+            "McKinsey"
+          ],
+          "relevance": "medium",
+          "summary": [
+            "Upgrade IAM/TPRM policies for agents; inventory use cases with model/hosting/data/access/dependencies.",
+            "Regulatory refs: GDPR Art.22, ECOA, NYC Local Law 144, EU AI Act.",
+            "ISO 27001 / NIST CSF / SOC 2 insufficient alone for autonomous agents; revise risk taxonomy.",
+            "Central AI portfolio oversight to stop shadow pilots; upskill security on AI threat modeling."
+          ],
+          "signals": [
+            "Enterprise \u2018agent portfolio + logging\u2019 as control against untraceable leakage."
           ]
         }
       ]

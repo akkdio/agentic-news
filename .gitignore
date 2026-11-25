@@ -1,0 +1,3 @@
+# Large binaries / local-only originals
+sources/*.pdf
+*.pdf
